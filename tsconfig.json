@@ -22,6 +22,6 @@
       "@/*": ["./*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "app/(auth)/layout.jsx", "app/(main)/onboarding/_components/onboarding-form.jsx", "app/(main)/preparation/page.jsx"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "app/(auth)/layout.jsx", "app/(main)/onboarding/_components/onboarding-form.jsx", "app/(main)/preparation/page.jsx", "middleware.js"],
   "exclude": ["node_modules"]
 }

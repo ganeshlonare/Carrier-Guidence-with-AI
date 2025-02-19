@@ -2,6 +2,7 @@ import { getRoadmap, saveRoadmap } from "@/actions/roadmap";
 import RoadmapBuilder from "./_components/roadmap-builder"
 import MarkdownRenderer from "@/markdown/MarkdownRenderer";
 import { Button } from "@/components/ui/button";
+import Link from "next/link";
 
 export default async function RoadMap() {
   const savedRoadmapContent = await saveRoadmap();
@@ -15,10 +16,10 @@ export default async function RoadMap() {
         </h1>
         <RoadmapBuilder content={savedRoadmapContent}/>
 
-        <div className="">
+        <Link href="/preparation">
           {/* <MarkdownRenderer content={readme}/> */}
           <Button>Start Preparation</Button>
-        </div> 
+        </Link> 
       </div>
     </div>
   );

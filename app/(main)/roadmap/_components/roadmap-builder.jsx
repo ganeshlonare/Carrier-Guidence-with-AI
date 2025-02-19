@@ -54,7 +54,7 @@ export default function RoadmapBuilder({ content }) {
               )}
 
               {/* Step content */}
-              <div className="w-full max-w-4xl p-6 bg-zinc-950 shadow-lg rounded-xl border border-gray-700 mb-10">
+              <div className="w-full max-w-4xl p-6 bg-[#181818] shadow-lg rounded-xl border border-gray-700 mb-10">
                 <div className="flex items-center space-x-6">
                   {/* Completion toggle button */}
                   <button

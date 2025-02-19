@@ -1,6 +1,18 @@
-import { BrainCircuit, Briefcase, LineChart, ScrollText } from "lucide-react";
+import { BrainCircuit, Briefcase, CalendarCheck, LineChart, Map, ScrollText } from "lucide-react";
 
 export const features = [
+  {
+    icon: <Map className="w-10 h-10 mb-4 text-primary" />,
+    title: "AI-Powered Personalized Roadmap",
+    description:
+      "Get a customized learning roadmap tailored to your career goals and skill level.",
+  },
+  {
+    icon: <CalendarCheck className="w-10 h-10 mb-4 text-primary" />,
+    title: "Weekly Study Plan",
+    description:
+      "Receive an AI-generated weekly study plan based on your personalized roadmap for structured learning.",
+  },
   {
     icon: <BrainCircuit className="w-10 h-10 mb-4 text-primary" />,
     title: "AI-Powered Career Guidance",
