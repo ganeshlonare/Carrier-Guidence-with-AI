@@ -61,6 +61,7 @@ const OnboardingForm = ({ industries }) => {
         industry: formattedIndustry,
       });
     } catch (error) {
+      console.log(error)
       console.error("Onboarding error:", error);
     }
   };

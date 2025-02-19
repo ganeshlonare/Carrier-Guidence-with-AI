@@ -8,6 +8,7 @@ import {FaArrowRight} from 'react-icons/fa'
 import Link from "next/link";
 
 export default function RoadmapBuilder({ content }) {
+  
   const [roadmap, setRoadmap] = useState([]);
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(false);
@@ -40,7 +41,7 @@ export default function RoadmapBuilder({ content }) {
   console.log(content)
   return (
     <div className="p-10 bg-[#0a0a0a] min-h-screen flex flex-col items-center">
-      {loading && <p className="text-blue-500 text-center">Loading roadmap...</p>}
+      {loading && <p className="text-white-500 text-center">Loading roadmap...</p>}
       {error && <p className="text-red-500 text-center">{error}</p>}
 
       {!loading && !error && roadmap.length > 0 && (
@@ -53,7 +54,7 @@ export default function RoadmapBuilder({ content }) {
               )}
 
               {/* Step content */}
-              <div className="w-full max-w-4xl p-6 bg-gradient-to-r from-gray-800 to-gray-900 shadow-lg rounded-xl border border-gray-700 mb-10">
+              <div className="w-full max-w-4xl p-6 bg-zinc-950 shadow-lg rounded-xl border border-gray-700 mb-10">
                 <div className="flex items-center space-x-6">
                   {/* Completion toggle button */}
                   <button
