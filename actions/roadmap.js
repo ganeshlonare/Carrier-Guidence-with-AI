@@ -14,9 +14,6 @@ export async function saveRoadmap() {
 
   const user = await db.user.findUnique({
     where: { clerkUserId: userId },
-    include: {
-      projects: true,
-    },
   });
 
   if (!user) {
@@ -399,7 +396,7 @@ const prompt =`As an expert career planner and mentor with deep knowledge of ind
   *(If not specified, suggest 2-3 potential goals based on their skills and industry.)*
 - **Current Progress**: ${user?.bio ?? "No details provided"}  
   *(If no details are provided, assume they are starting from scratch and provide a beginner-friendly roadmap.)*
-- **Projects**: ${user?.projects?.length > 0 ? user.projects.map((p) => p.title).join(", ") : "No projects"}  
+- **Projects**: ${user?.projects ?? "No projects" }  
   *(If no projects are listed, suggest beginner-friendly projects to build their portfolio.)*
 - **Skills**: ${user?.skills ?? "Not specified"}  
   *(If no skills are listed, suggest foundational skills based on their industry and target goal.)*

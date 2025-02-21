@@ -25,32 +25,19 @@ model User {
   // Relations
   skills      String[] // Array of skills
   assessments Assessment[]
-  projects    Project[]
   resume      Resume?
   coverLetter CoverLetter[]
 
   //new fields
+  projects            String?
   target              String? // User's career goal (e.g., "Full-Stack Developer")
-  pastAchievements    String[] // List of past achievements (e.g., "Built a portfolio website", "Completed JavaScript course")
+  achievements        String? // List of past achievements (e.g., "Built a portfolio website", "Completed JavaScript course")
   learningPreferences String? // User's preferred learning style ("Hands-on", "Reading", "Videos")
   roadmap             Json? // Stores dynamically generated roadmap
   Roadmap             Roadmap?
   preparation         preparation[]
 }
 
-model Project {
-  id          String   @id @default(cuid())
-  userId      String
-  user        User     @relation(fields: [userId], references: [id])
-  title       String // Project title
-  description String? // Short description of the project
-  techStack   String[] // List of technologies used
-  status      String   @default("ongoing") // "ongoing", "completed"
-  createdAt   DateTime @default(now())
-  updatedAt   DateTime @updatedAt
-
-  @@index([userId])
-}
 
 model Assessment {
   id             String   @id @default(cuid())

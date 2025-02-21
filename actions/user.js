@@ -127,3 +127,91 @@ export async function getUserOnboardingStatus() {
     })
   }
 }
+
+export async function handleNextOnboarding(data) {
+  const { userId } = await auth();
+  if (!userId) {
+    return Response.json({
+      status: "error",
+      message: "Unauthorized"
+    })
+  }
+
+  const user = await db.user.findUnique({
+    where: { clerkUserId: userId },
+  });
+
+  if (!user){
+    return Response.json({
+      status: "error",
+      message: "User Not found"
+    })
+  }
+  try {
+    const updatedUser = await db.user.update({
+      where: {
+        id: user.id,
+      },
+      data: {
+        target: data.target,
+        achievements: data.achievements,
+        projects: data.projects
+      },
+    });
+
+    return { updatedUser };
+  } catch (error) {
+    console.error("Error updating user and industry:", error.message);
+    return Response.json({
+      status: "error",
+      message: "Failed to update profile"
+    })
+  }
+}
+export async function getUserOnboardingNextStatus() {
+  const { userId } = await auth();
+  if (!userId) {
+    return Response.json({
+      message:"Unauthorized"
+    })
+  }
+
+  const user = await db.user.findUnique({
+    where: { clerkUserId: userId },
+  });
+
+  if (!user) {
+    return Response.json({
+      message:"user not found"
+    })
+  }
+
+  try {
+    const user = await db.user.findUnique({
+      where: {
+        clerkUserId: userId,
+      },
+      select: {
+        target: true,
+      },
+    });
+
+    if (!user) {
+      return Response.json({
+        status: "error",
+        message: "Failed to check user status"
+      })
+    }
+
+    return {
+      isOnboarded: !!user?.target,
+    };
+  } catch (error) {
+    console.log(error)
+    console.error("Error checking onboarding status:", error);
+    return Response.json({
+      status: "error",
+      message: "Failed to check onboarding status"
+    })
+  }
+}
