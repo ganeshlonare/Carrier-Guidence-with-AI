@@ -25,6 +25,9 @@ export const onboardingSchema = z.object({
           .filter(Boolean)
       : undefined
   ),
+  level: z.enum(["Beginner", "Intermediate", "Advanced"], {
+    required_error: "Level is required",
+  }),
 });
 
 export const contactSchema = z.object({

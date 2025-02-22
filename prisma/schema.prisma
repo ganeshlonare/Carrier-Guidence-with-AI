@@ -32,7 +32,7 @@ model User {
   projects            String?
   target              String? // User's career goal (e.g., "Full-Stack Developer")
   achievements        String? // List of past achievements (e.g., "Built a portfolio website", "Completed JavaScript course")
-  learningPreferences String? // User's preferred learning style ("Hands-on", "Reading", "Videos")
+  level               String? // User's preferred learning style ("Hands-on", "Reading", "Videos")
   roadmap             Json? // Stores dynamically generated roadmap
   Roadmap             Roadmap?
   preparation         preparation[]

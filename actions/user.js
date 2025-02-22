@@ -59,6 +59,7 @@ export async function updateUser(data) {
             experience: data.experience,
             bio: data.bio,
             skills: data.skills,
+            level: data.level
           },
         });
 

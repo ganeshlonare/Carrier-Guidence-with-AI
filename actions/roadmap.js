@@ -400,6 +400,8 @@ const prompt =`As an expert career planner and mentor with deep knowledge of ind
   *(If no projects are listed, suggest beginner-friendly projects to build their portfolio.)*
 - **Skills**: ${user?.skills ?? "Not specified"}  
   *(If no skills are listed, suggest foundational skills based on their industry and target goal.)*
+- **level**: ${user?.level ?? "Not specified"}
+  *(if no consider Beginner)
 - **Industry**: ${user?.industry ?? "Not specified"}  
   *(If no industry is specified, suggest 2-3 industries that align with their skills and goals.)*
 - **Assessment**:${user?.assessments ?? "Not specified"}
