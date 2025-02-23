@@ -12,7 +12,7 @@ export async function getChatbotResponse(message) {
 
   if (!message) throw new Error("Message is required");
 
-  const prompt = `You are an AI chatbot. Respond concisely and informatively. User: "${message}"`;
+  const prompt = `You are an AI chatbot. Respond concisely and informatively and give only a plain text not any * or other things we are directly showing your response to the user give all the answers in detail. User: "${message}"`;
 
   try {
     const result = await model.generateContent(prompt);

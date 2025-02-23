@@ -76,6 +76,7 @@ export async function savePreparation() {
     . Each week should have a "title" and an array of "data" objects. Each "data" object represents a sub-point within that week's learning plan and should have a "subpoint" description and a "youtube_link" field. Provide direct YouTube links where possible. However, due to the dynamic nature of YouTube content and the specificity of some sub-points, it's understood that perfect, direct links for every sub-point may not exist. Where a direct link isn't readily available, provide a placeholder link like "https://www.youtube.com/watch?v=Qf6e79xW5rI&list=PL9cWq4E-K_jO4Nj9m57Q98P53yRP-AAi7&index=2" or a relevant YouTube channel name (e.g., "freeCodeCamp.org") that users can then search within. Prioritize providing a relevant starting point (video or channel) for the overall theme of the week. If no suitable starting point is found, leave the "youtube_link" as an empty string "". The structure should be as follows:
 
 *****MUST HAVE*****
+**ROADMAP TO ALIGN** :- ${roadmapJson}
 **Only Give the JSON OUTPUT not any other text**
 **There Should be minimum 15 Weeks and each Week must have minimum 5 subpoint's**
 **Weeks plan should be exact matching with the given roadmap with each module of the roadmap there should be exact week matching and make this week plan as detailed as possible please**

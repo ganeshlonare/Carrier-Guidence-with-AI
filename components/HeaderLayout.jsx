@@ -1,3 +1,5 @@
+"use server"
+
 // app/layout-header.js (or any server component)
 import Header from "./header";
 import { checkUser } from "@/lib/checkUser";
